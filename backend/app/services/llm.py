@@ -1,12 +1,14 @@
-import os
 import json
+
 import httpx
+
 from ..settings import settings
 
 SYSTEM_PROMPT = """あなたは日本語のビジネス文書校正アシスタントです。
 - 社外向けの丁寧で明瞭な文章に整えます。
 - 意味は変えず、冗長表現を簡潔に、二重敬語を避けます。
 - 出力は JSON で返してください: {"revised": "...", "reasons": ["...","..."]}"""
+
 
 async def proofread_with_llm(text: str, tone: str | None, style: str | None) -> dict:
     """OpenAI を呼び出して校正結果を返す（モック可）"""
@@ -23,7 +25,10 @@ async def proofread_with_llm(text: str, tone: str | None, style: str | None) -> 
         "model": settings.OPENAI_MODEL,
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": f"トーン:{tone}\nスタイル:{style}\n---\n{text}"},
+            {
+                "role": "user",
+                "content": f"トーン:{tone}\nスタイル:{style}\n---\n{text}",
+            },
         ],
         "temperature": 0.2,
     }
