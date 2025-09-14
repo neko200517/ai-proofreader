@@ -1,6 +1,5 @@
 "use client";
 
-import { DiffView } from "@/components/DiffView";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -147,10 +146,12 @@ export default function Page() {
 
           <Card>
             <CardHeader>
-              <CardTitle>修正文（差分）</CardTitle>
+              <CardTitle>修正文</CardTitle>
             </CardHeader>
             <CardContent>
-              <DiffView diffs={diffs} />
+              <pre className="font-mono whitespace-pre-wrap">
+                {result?.revised}
+              </pre>
               {result.reasons.length > 0 && (
                 <ul className="mt-4 list-disc pl-5 text-sm text-slate-600">
                   {result.reasons.map((r, i) => (
