@@ -1,0 +1,112 @@
+######################################################
+# 共通（OS / エディタ）
+######################################################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.orig
+
+# VSCode 個人設定（共有用は .vscode.example/ などで管理）
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.example.json
+
+# JetBrains
+.idea/
+
+######################################################
+# 共通（環境変数・秘匿情報）
+######################################################
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+######################################################
+# 共通（ログ・キャッシュ・ビルド成果物）
+######################################################
+*.log
+*.tmp
+*.tsbuildinfo
+*.sqlite
+*.sqlite3
+*.db
+*.pem
+
+coverage/
+.nyc_output/
+.eslintcache
+.nyc_output/
+.nyc_output/
+.nyc_output/
+
+# TypeScript
+next-env.d.ts
+
+######################################################
+# Node.js / Next.js / Lambda 共通
+######################################################
+**/node_modules/
+**/.pnp
+**/.pnp.*
+**/.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+**/.next/
+**/out/
+**/build/
+**/.vercel
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+######################################################
+# Python / FastAPI / Lambda 共通
+######################################################
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+
+**/.venv/
+**/venv/
+**/env/
+
+**/*.egg-info/
+**/.eggs/
+**/dist/
+
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.coverage
+**/.coverage.*
+**/htmlcov/
+**/.tox/
+**/.nox/
+
+pip-log.txt
+poetry.lock.bkp
+Pipfile.lock.bkp
+
+######################################################
+# AWS SAM / CloudFormation
+######################################################
+.aws-sam/
+
+# テンプレート類はコミットするので除外しない
+# template.yaml
+# template.yml
+# samconfig.toml
+
+######################################################
+# Docker / Devcontainer
+######################################################
+docker-compose.override.yml
+**/.docker/
+**/.devcontainer/
